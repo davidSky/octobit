@@ -1,0 +1,8 @@
+[
+	  ["requestId", "uint"]
+	, ["requestType", "octet", ["get", "set", "ping", "noCache", "proxy", "noProxy", "faf", "ack"]]
+	, ["responseType", "octet", ["get", "set", "error", "proxied", "cached"]]
+	, ["timestamp", "double"]
+	, ["key", "buffer"]
+	, ["value", "buffer"]
+]

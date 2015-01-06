@@ -1,0 +1,7 @@
+{
+	  "uint": {"id": 1, "bytes": 4}
+	, "int": {"id": 2, "bytes": 4}
+	, "double": {"id": 3, "bytes": 8}
+	, "buffer": {"id": 4, "bytes": 2}
+	, "octet": {"id": 5, "bytes": 1}
+}
