@@ -32,8 +32,6 @@ console.log( struct.decode(buf).toObject() ) // {requestId: 12345678, requestTyp
 ```
 A single core/process on a Mac Air 2012 with i3 CPU can encode 300,000 of the objects per second, and decode (<i>index</i>) all of the resulted buffers in 0.06 second.
 
-> Octobit was designed to solve a specific problem, `binary server to server communication` where size matters, and it does not compete with JSON in any way. Following is for __development reference only__: JSON.stringify(obj) encodes 300,000 {getQuery} objects (with strings instead of buffers) in 0.85 seconds, JSON.parse decodes them in 0.12 second. Adding Buffer overhead: new Buffer(JSON.stringify(obj)) takes 1.4 second, and JSON.parse(buf.toString()) 0.24 second. Size wise it's 64 bytes vs 283.
-
 
 ## Structures and data types
 There are 3 basic data types: `number`, `buffer` and `octet`. Numbers are the usual [U]int32 and double; buffer (byte arrays) is Nodejs Buffer that can be up to 65536 long; and octet is one byte (8 bits) and can hold up to 8 unique flags. __Example structure__ [ key, type, extra ]:
