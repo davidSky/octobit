@@ -1,6 +1,6 @@
 {
   "name": "octobit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "8-bit, structured, binary message codec",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidSky/octobit.git"
+    "url": "https://github.com/davidSky/node-octobit.git"
   },
   "keywords": [
     "8-bit",
