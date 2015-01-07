@@ -1,6 +1,6 @@
 {
   "name": "octobit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "8-bit, structured, binary message codec",
   "main": "index.js",
   "directories": {
