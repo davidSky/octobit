@@ -62,7 +62,7 @@ A single `structure` can contain up to `8 elements`. Elements order must not cha
 * 4: __`buffer`__ 2 bytes, byte-array (Buffer), max buffer byte length: 65,535
 * 5: __`octet`__ 1 byte, 8 bits, max values (flags): 8
 
-> there's is no plan text or `String` support; use `buffer type` instead, like: .encode( { myKey: __new Buffer__('some text') } )
+> there's is no plain text or `String` support; use `buffer type` instead: .encode( { myKey: __new Buffer__('some text') } )
 
 ## The `octet` type
 The octet type uses 1 byte (8 bits) to store 8 Boolean flags. Octet's elements __order must not change__. If order is changed octet's flags will get scrumbled. You do however can append elements or set existing elements to undefined. Encoding/decoding example:
