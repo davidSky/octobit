@@ -2,9 +2,9 @@
 Size, simplicity and performance focused, structured, binary message codec for Nodejs.
 
 ## Size and performance
-```
+```js
 // example/index.js
-var octobit= require('.././index.js')
+var octobit= require('octobit')
 var struct= new octobit( require('./example.octo.json') )
 
 // full example
