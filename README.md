@@ -56,11 +56,11 @@ A single `structure` can contain up to `8 elements`. Elements order must not cha
 > if proxying data is not a concern, use .decode().toObject() to get the complete object at once
 
 ## Data types
-* 1: `__uint__` 4 bytes, 32-bit unsigned integer, max value: 4,294,967,295
-* 2: `__int__` 4 bytes, 32-bit signed integer, max value: -/+2,147,483,647
-* 3: `__double__` 8 bytes, 64-bit double-precision floating-point, max value: -/+9,007,199,254,740,991
-* 4: `__buffer__` 2 bytes, byte-array (Buffer), max buffer byte length: 65,535
-* 5: `__octet__` 1 byte, 8 bits, max values (flags): 8
+* 1: __`uint`__ 4 bytes, 32-bit unsigned integer, max value: 4,294,967,295
+* 2: __`int`__ 4 bytes, 32-bit signed integer, max value: -/+2,147,483,647
+* 3: __`double`__ 8 bytes, 64-bit double-precision floating-point, max value: -/+9,007,199,254,740,991
+* 4: __`buffer`__ 2 bytes, byte-array (Buffer), max buffer byte length: 65,535
+* 5: __`octet`__ 1 byte, 8 bits, max values (flags): 8
 
 > there's is no plan text or `String` support; use `buffer type` instead, like: .encode( { myKey: __new Buffer__('some text') } )
 
