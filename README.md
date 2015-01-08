@@ -1,5 +1,5 @@
-# Octobit (8-bit)
-Size, simplicity and performance focused, structured, binary message codec for Nodejs.
+# Octobit
+Small and fast tructured binary message codec for Nodejs.
 
 ## Size and performance
 ```js
@@ -30,7 +30,7 @@ console.log( buf.length ) // 6
 console.log( struct.decode(buf).toObject() ) // {requestId: 12345678, requestType: { ping: tru ... }
 
 ```
-A single core on a Mac Air 2012 with i3 CPU can encode ~300,000 of the above objects per second, and decode <i>(index)</i> all of the resulted buffers in 0.06 second.
+2012 Mac Air's single core can encode 300,000 {getQuery} objects per second, and decode the resulted buffers in 0.06 second.
 
 
 ## Structures and data types
@@ -46,7 +46,7 @@ There are 3 basic data types: `number`, `buffer` and `octet`. Number is the usua
 	, ["value", "buffer"]
 ]
 ```
-A single `structure` can contain up to `8 elements`. Elements order must not change, but new elements can be appended (up to 8). If elements' order is changed: __data will get scrumbled__.
+A single `structure` can contain up to `8 elements`. A structure must be defined once and never modified. Only the octet type can endure changes -- new flags can be appended (up to 8).
 > when 8 elements is not enough, pack another structure into the first one as a buffer
 
 ## encode/decode
@@ -120,9 +120,12 @@ var octObject= struct.decode(buffer) // returns octobject
 octObject.get() // returns array containing all set keys
 octObject.get('key') // value
 ```
+## octobject.isSet(key[, value])
+```js
+octObject.set('requestId') // true
+// See TODO
+```
 ## octobject.set(key, value)
-__Work in progress.__
-returns true on success
 ```js
 octObject.set('requestId', 36) // true
 octObject.set('requestType', {noProxy: true}) // true
@@ -130,8 +133,6 @@ octObject.set('requestType', 'noProxy') // true
 // See TODO
 ```
 ## octobject.unset(key[, value])
-__Work in progress.__ Only implemented partially.
-returns true on success
 ```js
 // unset 'noProxy' flag from 'requestType' octet
 octObject.unset('requestType', 'noProxy') // true
@@ -154,9 +155,9 @@ npm install octobit
 
 
 # TODO
-* Octobject.unset(key)
-* Octobject.set(key, buffer)
-* Octobject.set(newKey, value)
-
+* Octobject.unset(key) // remove a key 
+* Octobject.set(key, buffer) // set buffer type
+* Octobject.set(newKey, value) // set previously not set key
+* Octobject.isSet(key, value) // check if a specific flag is set
 
 
